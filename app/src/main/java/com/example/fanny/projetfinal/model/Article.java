@@ -1,20 +1,24 @@
-package com.example.fanny.projetfinal;
+package com.example.fanny.projetfinal.model;
 
+
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Locale;
 
 public class Article {
 
-    String id = new String();
-    String name = new String();
-    String author = new String();
-    String title = new String();
-    String description = new String();
-    String url = new String();
-    String urlToImage = new String();
-    String publishedAt = new String();
+    private String id = "";
+    private String name = "";
+    private String author = "";
+    private String title = "";
+    private String description = "";
+    private String url = "";
+    private String urlToImage = "";
+    private String publishedAt = "";
 
-    public Article(){
+    public Article() {
         this.id = "";
-        this.name="";
+        this.name = "";
         this.author = "";
         this.title = "";
         this.description = "";
@@ -25,7 +29,7 @@ public class Article {
 
     public Article(String id, String name, String author, String title, String description, String url, String urlToImage, String publishedAt) {
         this.id = id;
-        this.name=name;
+        this.name = name;
         this.author = author;
         this.title = title;
         this.description = description;
@@ -51,12 +55,7 @@ public class Article {
     }
 
     public String getAuthor() {
-        if (author.equals(null)) {
-            return "Auteur inconnu";
-        }
-        else  {
-            return author;
-        }
+        return author;
     }
 
     public void setAuthor(String author) {
@@ -88,12 +87,7 @@ public class Article {
     }
 
     public String getUrlToImage() {
-        if (urlToImage.equals(null)) {
-            return "Pas d'url source de l'image";
-        }
-        else  {
-            return urlToImage;
-        }
+        return urlToImage;
     }
 
     public void setUrlToImage(String urlToImage) {

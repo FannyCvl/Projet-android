@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:columnCount="20"
+    android:padding="15dp">
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        android:layout_width="259dp"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/relativeLayoutImg"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/titleTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:text="Titre" />
+
+
+        <TextView
+            android:id="@+id/dateTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/authorTxt"
+            android:height="18dp"
+            android:text="Date" />
+
+        <TextView
+            android:id="@+id/authorTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="18dp"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/titleTxt"
+            android:text="Auteur" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/relativeLayoutImg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_column="10"
+        android:layout_columnSpan="5"
+        android:layout_marginBottom="4dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginTop="4dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/imgArticle"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:layout_marginBottom="4dp"
+            android:layout_marginEnd="4dp"
+
+            android:layout_marginTop="4dp"
+            android:contentDescription="TODO"
+            android:maxHeight="54dp"
+            android:minHeight="54dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@android:drawable/btn_dialog" />
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

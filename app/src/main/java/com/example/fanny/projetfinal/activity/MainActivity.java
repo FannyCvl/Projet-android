@@ -1,4 +1,4 @@
-package com.example.fanny.projetfinal;
+package com.example.fanny.projetfinal.activity;
 
 import android.app.AlertDialog;
 import android.content.Context;
@@ -8,28 +8,27 @@ import android.net.ConnectivityManager;
 import android.net.NetworkInfo;
 import android.os.Bundle;
 import android.app.Activity;
+import android.os.StrictMode;
 import android.util.Log;
-import android.view.Menu;
-import android.widget.EditText;
-import android.widget.Toast;
 
-import org.json.JSONObject;
-
-import java.util.ArrayList;
-
-import static android.R.attr.id;
-import static android.R.attr.name;
+import com.example.fanny.projetfinal.R;
 
 public class MainActivity extends Activity {
 
-    private final Recup_articles recupart= new Recup_articles();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        int SDK_INT = android.os.Build.VERSION.SDK_INT;
+        if (SDK_INT > 8)
+        {
+            StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder()
+                    .permitAll().build();
+            StrictMode.setThreadPolicy(policy);
+            //your codes here
 
-
+        }
         new Thread(new Runnable() {
             public void run(){
                 ConnectivityManager connectivityManager = (ConnectivityManager)getSystemService(Context.CONNECTIVITY_SERVICE);
@@ -62,14 +61,13 @@ public class MainActivity extends Activity {
         else {
             try {
                 synchronized (this) {
-                    Thread.sleep(3000);
+                    Thread.sleep(1000);
                 }
             } catch (InterruptedException e) {
                 // TODO Auto-generated catch block
                 Log.d("TAG", "Waiting didnt work!!");
                 e.printStackTrace();
             }
-            ArrayList articles=recupart.Articles();
             Intent intent = new Intent(MainActivity.this, Accueil.class);
             startActivity(intent);
         }
